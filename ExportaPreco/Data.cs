@@ -83,7 +83,7 @@ namespace ExportaPreco
                 conexao.Open();
                 string query =
                     "select                                                                                                " +
-                    "c.codigobarra as  EAN,                                                                                " +
+                    "lpad(c.codigobarra,13,0) as  EAN,                                                                     " +
                     "rpad(c.descricao,20,' ') as DESCRICAO,                                                                " +
                     "lpad(replace(cast(cast(b.custofinal as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
                     "                                                                                                      " +
