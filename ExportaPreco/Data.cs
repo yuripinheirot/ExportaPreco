@@ -85,7 +85,7 @@ namespace ExportaPreco
                     "select                                                                                                " +
                     "lpad(c.codigobarra,13,0) as  EAN,                                                                     " +
                     "rpad(c.descricao,20,' ') as DESCRICAO,                                                                " +
-                    "lpad(replace(cast(cast(b.custofinal as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
+                    "lpad(replace(cast(cast(b.prpraticado as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
                     "                                                                                                      " +
                     "from testtabelapreco a                                                                                " +
                     "inner join testtabelaprecoprodutos b on (a.empresa = b.empresa and a.idtabelapreco = b.idtabelapreco) " +
