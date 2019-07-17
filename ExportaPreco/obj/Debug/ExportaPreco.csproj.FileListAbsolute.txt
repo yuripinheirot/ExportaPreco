@@ -1,0 +1,14 @@
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\bin\Debug\ExportaPreco.exe.config
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\bin\Debug\ExportaPreco.exe
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\bin\Debug\ExportaPreco.pdb
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.csprojAssemblyReference.cache
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.frmMain.resources
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.Properties.Resources.resources
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.csproj.GenerateResource.cache
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.csproj.CoreCompileInputs.cache
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.exe
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.pdb
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.csproj.CopyComplete
+C:\Users\yurii\Documents\GitHub\ExportaPreco\ExportaPreco\obj\Debug\ExportaPreco.frmTabelasDePreco.resources
