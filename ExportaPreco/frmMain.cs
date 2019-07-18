@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.IO;
 
 namespace ExportaPreco
 {
@@ -23,7 +25,10 @@ namespace ExportaPreco
         {
             try
             {
-                tbxDiretorio.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (!string.IsNullOrEmpty(Properties.Settings.Default.diretorio))
+                {
+                    tbxDiretorio.Text = Properties.Settings.Default.diretorio;
+                }
             }
             catch (Exception erro)
             {
@@ -90,6 +95,11 @@ namespace ExportaPreco
             if (data.VerificaConexao() == false)
             {
                 MessageBox.Show("Não foi possível conectar a base de dados apontada, verifique.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (!Directory.Exists(tbxDiretorio.Text))
+            {
+                MessageBox.Show("Diretório de saída apontado não existe, verifique.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 

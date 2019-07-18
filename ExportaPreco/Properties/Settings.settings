@@ -9,5 +9,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">DataSource=127.0.0.1; Database=c:\ecosis\dados\ecodados.eco; User=SYSDBA; Password=masterkey</Value>
     </Setting>
+    <Setting Name="diretorio" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\temp</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

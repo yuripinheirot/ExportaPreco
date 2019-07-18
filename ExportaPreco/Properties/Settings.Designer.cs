@@ -33,5 +33,17 @@ namespace ExportaPreco.Properties {
                 return ((string)(this["conexao"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\temp")]
+        public string diretorio {
+            get {
+                return ((string)(this["diretorio"]));
+            }
+            set {
+                this["diretorio"] = value;
+            }
+        }
     }
 }
