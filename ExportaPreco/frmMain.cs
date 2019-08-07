@@ -78,11 +78,11 @@ namespace ExportaPreco
             }
         }
 
-        private void BtnExportar_Click(object sender, EventArgs e)
+        private async void BtnExportar_Click(object sender, EventArgs e)
         {
             Data data = new Data();
 
-            if (string.IsNullOrWhiteSpace(tbxIdTabela.Text)  || string.IsNullOrWhiteSpace(tbxDiretorio.Text))
+            if (string.IsNullOrWhiteSpace(tbxIdTabela.Text) || string.IsNullOrWhiteSpace(tbxDiretorio.Text))
             {
                 MessageBox.Show("Dados incompletos, por favor verifique!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -103,7 +103,8 @@ namespace ExportaPreco
                 return;
             }
 
-            data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text,progressBar1);
+            await data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text, progressBar1, lblConcluido);
+
         }
 
         private void TbxDiretorio_KeyDown(object sender, KeyEventArgs e)

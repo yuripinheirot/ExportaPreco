@@ -26,8 +26,8 @@ namespace ExportaPreco.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("DataSource=127.0.0.1; Database=c:\\ecosis\\dados\\ecodados.eco; User=SYSDBA; Passwor" +
-            "d=masterkey")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DataSource=127.0.0.1; Database=127.0.0.1:D:\\Dados\\toklar\\ecodados.eco; User=SYSDB" +
+            "A; Password=masterkey")]
         public string conexao {
             get {
                 return ((string)(this["conexao"]));
@@ -36,7 +36,7 @@ namespace ExportaPreco.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\temp")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\temp")]
         public string diretorio {
             get {
                 return ((string)(this["diretorio"]));

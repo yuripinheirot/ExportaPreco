@@ -14,10 +14,10 @@ namespace ExportaPreco
 {
     class Data
     {
-            string server = ConfigurationManager.ConnectionStrings["ExportaPreco.Properties.Settings.conexao"].ToString();
-            FbConnection conexao = null;
-            
-        
+        string server = ConfigurationManager.ConnectionStrings["ExportaPreco.Properties.Settings.conexao"].ToString();
+        FbConnection conexao = null;
+
+
 
         public DataTable BuscaTabelas()
         {
@@ -72,41 +72,47 @@ namespace ExportaPreco
             }
         }
 
-        public void ExportarRegistro(string caminho, string idtabela, ProgressBar bar)
+        public async Task ExportarRegistro(string caminho, string idtabela, ProgressBar bar, Label Concluido)
         {
             StreamWriter sw = new StreamWriter(caminho + @"\" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".txt", false, Encoding.UTF8);
             bar.Value = 0;
 
             try
             {
-                conexao = new FbConnection(server);
-                conexao.Open();
-                string query =
-                    "select                                                                                                " +
-                    "lpad(c.codigobarra,13,0) as  EAN,                                                                     " +
-                    "rpad(c.descricao,20,' ') as DESCRICAO,                                                                " +
-                    "lpad(replace(cast(cast(b.prpraticado as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
-                    "                                                                                                      " +
-                    "from testtabelapreco a                                                                                " +
-                    "inner join testtabelaprecoprodutos b on (a.empresa = b.empresa and a.idtabelapreco = b.idtabelapreco) " +
-                    "inner join testprodutogeral c on (b.produto = c.codigo)                                               " +
-                    "where                                                                                                 " +
-                    "a.idtabelapreco = " + idtabela;
-                FbCommand cmd = new FbCommand(query, conexao);
-                FbDataAdapter adapter = new FbDataAdapter();
-                DataTable table = new DataTable();
-                adapter.SelectCommand = cmd;
-                adapter.Fill(table);
-                string txt = string.Empty;
-                FbDataReader reader = cmd.ExecuteReader();
-                bar.Maximum = table.Rows.Count;
-                while (reader.Read())
-                {
-                    sw.WriteLine(string.Format("{0}{1}{2}", reader["EAN"].ToString(), reader["DESCRICAO"].ToString(), reader["PRECO"].ToString()));
-                    bar.Value += 1;
-                }
 
-                sw.Write(txt);
+                await Task.Run(() =>
+                {
+                    conexao = new FbConnection(server);
+                    conexao.Open();
+                    string query =
+                        "select                                                                                                " +
+                        "lpad(c.codigobarra,13,0) as  EAN,                                                                     " +
+                        "rpad(c.descricao,20,' ') as DESCRICAO,                                                                " +
+                        "lpad(replace(cast(cast(b.prpraticado as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
+                        "                                                                                                      " +
+                        "from testtabelapreco a                                                                                " +
+                        "inner join testtabelaprecoprodutos b on (a.empresa = b.empresa and a.idtabelapreco = b.idtabelapreco) " +
+                        "inner join testprodutogeral c on (b.produto = c.codigo)                                               " +
+                        "where                                                                                                 " +
+                        "a.idtabelapreco = " + idtabela;
+                    FbCommand cmd = new FbCommand(query, conexao);
+                    FbDataAdapter adapter = new FbDataAdapter();
+                    DataTable table = new DataTable();
+                    adapter.SelectCommand = cmd;
+                    adapter.Fill(table);
+                    string txt = string.Empty;
+                    FbDataReader reader = cmd.ExecuteReader();
+                    bar.Maximum = table.Rows.Count;
+
+                    while (reader.Read())
+                    {
+                        sw.WriteLine(string.Format("{0}{1}{2}", reader["EAN"].ToString(), reader["DESCRICAO"].ToString(), reader["PRECO"].ToString()));
+                        bar.Value += 1;
+                        Concluido.Text = "Concluído " + bar.Value + "/" + table.Rows.Count;
+                    }
+
+                    sw.Write(txt);
+                });
 
                 MessageBox.Show("Processo concluído com sucesso!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

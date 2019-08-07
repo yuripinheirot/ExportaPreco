@@ -40,6 +40,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblProgresso = new System.Windows.Forms.Label();
             this.Ajuda = new System.Windows.Forms.ToolTip(this.components);
+            this.lblConcluido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -145,6 +146,15 @@
             this.Ajuda.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.Ajuda.ToolTipTitle = "Info";
             // 
+            // lblConcluido
+            // 
+            this.lblConcluido.AutoSize = true;
+            this.lblConcluido.Location = new System.Drawing.Point(12, 149);
+            this.lblConcluido.Name = "lblConcluido";
+            this.lblConcluido.Size = new System.Drawing.Size(76, 13);
+            this.lblConcluido.TabIndex = 10;
+            this.lblConcluido.Text = "Concluído 0/0";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +162,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.btnSair;
             this.ClientSize = new System.Drawing.Size(433, 176);
+            this.Controls.Add(this.lblConcluido);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.btnSair);
@@ -186,6 +197,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblProgresso;
         private System.Windows.Forms.ToolTip Ajuda;
+        private System.Windows.Forms.Label lblConcluido;
     }
 }
 
