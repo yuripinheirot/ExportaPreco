@@ -12,5 +12,8 @@
     <Setting Name="diretorio" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\temp</Value>
     </Setting>
+    <Setting Name="dataAlteracao" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01/01/1900</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

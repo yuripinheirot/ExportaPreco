@@ -81,6 +81,7 @@ namespace ExportaPreco
         private async void BtnExportar_Click(object sender, EventArgs e)
         {
             Data data = new Data();
+            string dataAlteracao = Convert.ToDateTime(tbxDataAlteracao.Text).ToString("dd.MM.yyyy");
 
             if (string.IsNullOrWhiteSpace(tbxIdTabela.Text) || string.IsNullOrWhiteSpace(tbxDiretorio.Text))
             {
@@ -103,7 +104,7 @@ namespace ExportaPreco
                 return;
             }
 
-            await data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text, progressBar1, lblConcluido);
+            await data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text, progressBar1, lblConcluido, dataAlteracao);
 
         }
 

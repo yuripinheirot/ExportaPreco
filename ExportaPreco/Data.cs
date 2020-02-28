@@ -72,7 +72,7 @@ namespace ExportaPreco
             }
         }
 
-        public async Task ExportarRegistro(string caminho, string idtabela, ProgressBar bar, Label Concluido)
+        public async Task ExportarRegistro(string caminho, string idtabela, ProgressBar bar, Label Concluido, string data)
         {
             StreamWriter sw = new StreamWriter(caminho + @"\" + DateTime.Now.ToString("ddMMyyyyHHmmss") + ".txt", false, Encoding.UTF8);
             bar.Value = 0;
@@ -85,16 +85,20 @@ namespace ExportaPreco
                     conexao = new FbConnection(server);
                     conexao.Open();
                     string query =
-                        "select                                                                                                " +
-                        "lpad(c.codigobarra,13,0) as  EAN,                                                                     " +
-                        "rpad(c.descricao,20,' ') as DESCRICAO,                                                                " +
-                        "lpad(replace(cast(cast(b.prpraticado as numeric(15,2))as varchar(15)),'.',''),12,'0') as PRECO         " +
-                        "                                                                                                      " +
-                        "from testtabelapreco a                                                                                " +
-                        "inner join testtabelaprecoprodutos b on (a.empresa = b.empresa and a.idtabelapreco = b.idtabelapreco) " +
-                        "inner join testprodutogeral c on (b.produto = c.codigo)                                               " +
-                        "where                                                                                                 " +
-                        "a.idtabelapreco = " + idtabela;
+                        "select distinct                                                                     " +
+                        "pdg.codigobarra as  EAN,                                                            " +
+                        "replace(pdg.descricao,';','') as DESCRICAO,                                         " +
+                        "replace(cast(cast(pdt.prpraticado as numeric(17,2)) as varchar(20)),'.','')as PRECO " +
+                        "from testproduto pdt                                                                " +
+                        "inner join testprodutogeral pdg on (pdt.produto = pdg.codigo)                       " +
+                        "inner join  testtabelapreco tbp on (tbp.empresa = pdt.empresa)                      " +
+                        "inner join testtabelaprecoprodutos tpt on (pdt.empresa = tpt.empresa and            " +
+                        "                                           tbp.idtabelapreco = tpt.idtabelapreco    " +
+                        "                                           and tpt.produto = pdt.produto)           " +
+                        "where                                                                               " +
+                        "pdt.ativo = 'S'                                                                     " +
+                       $"and tbp.idtabelapreco  = '{idtabela}'                                               " +
+                       $"and pdt.dataalteracao >= '{data}'                                                   ";
                     FbCommand cmd = new FbCommand(query, conexao);
                     FbDataAdapter adapter = new FbDataAdapter();
                     DataTable table = new DataTable();
@@ -106,7 +110,7 @@ namespace ExportaPreco
 
                     while (reader.Read())
                     {
-                        sw.WriteLine(string.Format("{0}{1}{2}", reader["EAN"].ToString(), reader["DESCRICAO"].ToString(), reader["PRECO"].ToString()));
+                        sw.WriteLine(string.Format("{0};{1};{2}", reader["EAN"].ToString(), reader["DESCRICAO"].ToString(), reader["PRECO"].ToString()));
                         bar.Value += 1;
                         Concluido.Text = "Concluído " + bar.Value + "/" + table.Rows.Count;
                     }

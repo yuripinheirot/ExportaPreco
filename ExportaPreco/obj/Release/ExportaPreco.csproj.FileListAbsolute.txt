@@ -26,3 +26,16 @@ C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPre
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.CopyComplete
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.exe
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.pdb
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\bin\Release\ExportaPreco.exe.config
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\bin\Release\ExportaPreco.exe
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\bin\Release\ExportaPreco.pdb
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\bin\Release\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\bin\Release\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.frmMain.resources
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.frmTabelasDePreco.resources
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.Properties.Resources.resources
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.CopyComplete
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.exe
+C:\Users\Administrator\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.pdb
