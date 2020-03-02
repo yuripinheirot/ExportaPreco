@@ -43,6 +43,9 @@
             this.lblConcluido = new System.Windows.Forms.Label();
             this.tbxDataAlteracao = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbxEmpresa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label4
@@ -85,7 +88,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 48);
+            this.label6.Location = new System.Drawing.Point(68, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 0;
@@ -93,10 +96,10 @@
             // 
             // tbxDiretorio
             // 
-            this.tbxDiretorio.Location = new System.Drawing.Point(15, 64);
+            this.tbxDiretorio.Location = new System.Drawing.Point(68, 64);
             this.tbxDiretorio.Name = "tbxDiretorio";
-            this.tbxDiretorio.Size = new System.Drawing.Size(404, 20);
-            this.tbxDiretorio.TabIndex = 3;
+            this.tbxDiretorio.Size = new System.Drawing.Size(351, 20);
+            this.tbxDiretorio.TabIndex = 4;
             this.Ajuda.SetToolTip(this.tbxDiretorio, "Pressione F2 para selecionar um diretório de saída.");
             this.tbxDiretorio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxDiretorio_KeyDown);
             // 
@@ -106,7 +109,7 @@
             this.btnSair.Location = new System.Drawing.Point(344, 144);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 8;
             this.btnSair.Text = "Sai&r";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
@@ -117,7 +120,7 @@
             this.btnExportar.Location = new System.Drawing.Point(263, 144);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 23);
-            this.btnExportar.TabIndex = 5;
+            this.btnExportar.TabIndex = 7;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
             this.btnExportar.Click += new System.EventHandler(this.BtnExportar_Click);
@@ -127,7 +130,7 @@
             this.progressBar1.Location = new System.Drawing.Point(15, 104);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(404, 23);
-            this.progressBar1.TabIndex = 4;
+            this.progressBar1.TabIndex = 5;
             // 
             // lblProgresso
             // 
@@ -154,7 +157,7 @@
             this.lblConcluido.Location = new System.Drawing.Point(12, 149);
             this.lblConcluido.Name = "lblConcluido";
             this.lblConcluido.Size = new System.Drawing.Size(76, 13);
-            this.lblConcluido.TabIndex = 10;
+            this.lblConcluido.TabIndex = 6;
             this.lblConcluido.Text = "Concluído 0/0";
             // 
             // tbxDataAlteracao
@@ -175,6 +178,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Alterados a partir de";
             // 
+            // tbxEmpresa
+            // 
+            this.tbxEmpresa.Location = new System.Drawing.Point(15, 64);
+            this.tbxEmpresa.Name = "tbxEmpresa";
+            this.tbxEmpresa.Size = new System.Drawing.Size(47, 20);
+            this.tbxEmpresa.TabIndex = 3;
+            this.tbxEmpresa.Text = "01";
+            this.tbxEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Empresa";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +203,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.btnSair;
             this.ClientSize = new System.Drawing.Size(433, 176);
+            this.Controls.Add(this.tbxEmpresa);
             this.Controls.Add(this.tbxDataAlteracao);
             this.Controls.Add(this.lblConcluido);
             this.Controls.Add(this.progressBar1);
@@ -194,6 +216,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -222,6 +245,9 @@
         private System.Windows.Forms.Label lblConcluido;
         private System.Windows.Forms.DateTimePicker tbxDataAlteracao;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbxEmpresa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

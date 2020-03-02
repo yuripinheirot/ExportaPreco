@@ -22,7 +22,6 @@ C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPre
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.frmTabelasDePreco.resources
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.Properties.Resources.resources
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.GenerateResource.cache
-C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.CoreCompileInputs.cache
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.csproj.CopyComplete
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.exe
 C:\Users\yurie\Documents\Github\exportapreco\ExportaPreco\obj\Release\ExportaPreco.pdb

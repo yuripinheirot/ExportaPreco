@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.IO;
+using System.Diagnostics;
 
 namespace ExportaPreco
 {
@@ -104,8 +105,15 @@ namespace ExportaPreco
                 return;
             }
 
-            await data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text, progressBar1, lblConcluido, dataAlteracao);
+            Stopwatch timer = new Stopwatch();
+            btnExportar.Enabled = false;
+            timer.Start();
 
+            await data.ExportarRegistro(tbxDiretorio.Text, tbxIdTabela.Text,tbxEmpresa.Text, progressBar1, lblConcluido, dataAlteracao);
+
+            timer.Stop();
+            btnExportar.Enabled = true;
+            MessageBox.Show("Processo concluído com sucesso!\n\nTempo decorrido: " + timer.Elapsed.ToString("hh\\:mm\\:ss\\.ff"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TbxDiretorio_KeyDown(object sender, KeyEventArgs e)
